@@ -20,7 +20,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<Providers>
 					<Navbar />
-					<main className="overflow-x-hidden overflow-y-scroll scroll-smooth">
+					<main className="overflow-x-hidden overflow-y-scroll scroll-smooth w-full h-full">
 						<script
 							// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 							dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}

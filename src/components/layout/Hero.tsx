@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { CONTENT } from "@/constants/content";
 
 export default function HeroSection() {
 	return (
@@ -17,25 +18,24 @@ export default function HeroSection() {
 				<div className="relative z-10">
 					<div className="container py-10 lg:py-16">
 						<div className="max-w-2xl text-center mx-auto">
-							<p className="">Elevate your projects</p>
+							<p className="">{CONTENT.HERO_SUBTITLE}</p>
 							{/* Title */}
 							<div className="mt-5 max-w-2xl">
 								<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-									Beautiful UI Blocks
+									{CONTENT.HERO_TITLE}
 								</h1>
 							</div>
 							{/* End Title */}
 							<div className="mt-5 max-w-3xl">
 								<p className="text-xl text-muted-foreground">
-									Over 10+ fully responsive, UI blocks you can drop into your
-									Shadcn UI projects and customize to your heart&apos;s content.
+									{CONTENT.HERO_DESCRIPTION}
 								</p>
 							</div>
 							{/* Buttons */}
 							<div className="mt-8 gap-3 flex justify-center">
-								<Button size={"lg"}>Get started</Button>
+								<Button size={"lg"}>Book a ride</Button>
 								<Button size={"lg"} variant={"outline"}>
-									Learn more
+									Continue as guest
 								</Button>
 							</div>
 							{/* End Buttons */}

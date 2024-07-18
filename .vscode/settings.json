@@ -16,5 +16,8 @@
 				"cmd": "bunx @biomejs/biome lint ${file} --apply-unsafe"
 			}
 		]
+	},
+	"[tailwindcss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	}
 }

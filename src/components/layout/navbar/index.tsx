@@ -16,7 +16,7 @@ import {
 	SheetTrigger,
 } from "../../ui/sheet";
 
-import { PRODUCT_LOGO, PRODUCT_TITLE } from "@/constants/content";
+import { CONTENT } from "@/constants/content";
 import {
 	NavigationMenu,
 	NavigationMenuItem,
@@ -62,7 +62,7 @@ const CustomNavigationMenu = React.memo(() => (
 	<NavigationMenu className="mx-auto hidden lg:block">
 		<NavigationMenuList>
 			<NavigationMenuItem>
-				<Suspense fallback={<div>Loading...</div>}>
+				<Suspense>
 					<MemoizedRouteList routeList={routeList} />
 				</Suspense>
 			</NavigationMenuItem>
@@ -85,8 +85,8 @@ export const Navbar = () => {
 			)}
 		>
 			<Link className="flex items-center gap-2 px-2 font-bold text-lg" href="/">
-				<PRODUCT_LOGO size={24} fill="currentColor" />
-				{PRODUCT_TITLE}
+				<CONTENT.PRODUCT_LOGO size={24} fill="currentColor" strokeWidth={0.5} />
+				{CONTENT.PRODUCT_TITLE}
 			</Link>
 
 			{/* <!-- Mobile --> */}
@@ -109,8 +109,8 @@ export const Navbar = () => {
 										className="flex items-center gap-2 font-bold text-lg"
 										href="/"
 									>
-										<PRODUCT_LOGO size={24} fill="currentColor" />
-										{PRODUCT_TITLE}
+										<CONTENT.PRODUCT_LOGO size={24} fill="currentColor" />
+										{CONTENT.PRODUCT_TITLE}
 									</Link>
 								</SheetTitle>
 							</SheetHeader>
