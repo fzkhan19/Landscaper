@@ -2,7 +2,7 @@ import HeroSection from "@/components/layout/Hero";
 import Particles from "@/components/ui/particles";
 export default function Home() {
 	return (
-		<main>
+		<article>
 			<HeroSection />
 			<Particles
 				refresh
@@ -10,6 +10,6 @@ export default function Home() {
 				ease={80}
 				quantity={200}
 			/>
-		</main>
+		</article>
 	);
 }

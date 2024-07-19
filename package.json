@@ -22,6 +22,7 @@
 		]
 	},
 	"dependencies": {
+		"@clerk/nextjs": "^5.2.4",
 		"@million/lint": "^1.0.0-rc.81",
 		"@radix-ui/react-dialog": "^1.1.1",
 		"@radix-ui/react-navigation-menu": "^1.2.0",

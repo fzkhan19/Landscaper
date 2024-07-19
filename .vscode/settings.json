@@ -1,6 +1,5 @@
 {
 	"editor.defaultFormatter": "biomejs.biome",
-	"files.autoSaveDelay": 1000,
 	"files.associations": {
 		"*.css": "tailwindcss"
 	},

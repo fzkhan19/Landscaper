@@ -76,10 +76,11 @@ export const Navbar = () => {
 	return (
 		<header
 			className={cn(
-				"sticky top-5 z-40 mx-auto flex w-[90%] items-center justify-between",
+				"absolute top-5 z-40 left-0 right-0 mx-auto flex w-[90%] items-center justify-between",
 				"rounded-2xl border border-secondary p-4",
 				"shadow-[0_0px_10px_rgb(0,0,0,0.2)] shadow-primary/30",
-				"border-0",
+				"hover:shadow-primary/50 border-0",
+				"transition-all duration-500 ease-in-out",
 				"md:top-10 md:w-[70%] lg:w-[75%] lg:max-w-screen-xl",
 				"bg-white/20 saturate-150 backdrop-blur backdrop-contrast-125 dark:bg-black/20",
 			)}

@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 
+import { ClerkProvider } from "@clerk/nextjs";
 import QueryProviders from "./query-client-provider";
 import { ThemeProvider } from "./theme-provider";
-
 const Providers = ({ children }: { children: ReactNode }) => {
 	return (
 		<ThemeProvider
@@ -11,7 +11,15 @@ const Providers = ({ children }: { children: ReactNode }) => {
 			attribute="class"
 			defaultTheme="system"
 		>
-			<QueryProviders>{children}</QueryProviders>
+			<ClerkProvider
+				appearance={{
+					variables: {
+						colorPrimary: "hsl(221.2 83.2% 53.3%)",
+					},
+				}}
+			>
+				<QueryProviders>{children}</QueryProviders>
+			</ClerkProvider>
 		</ThemeProvider>
 	);
 };
