@@ -6,6 +6,4 @@ const nextConfig = {
 		domains: ["placehold.co"],
 	},
 };
-export default MillionLint.next({
-	rsc: true,
-})(nextConfig);
+export default nextConfig;
