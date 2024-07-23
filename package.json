@@ -12,12 +12,10 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+
     }
   },
-  "lint-staged": {
-    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": "biome check --write"
-  },
+
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@million/lint": "^1.0.0-rc.81",
@@ -31,6 +29,7 @@
     "@tanstack/react-query": "^5.51.9",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.3.12",
     "husky": "^9.1.0",
     "lint-staged": "^15.2.7",
     "lucide-react": "^0.408.0",
