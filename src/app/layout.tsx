@@ -3,10 +3,10 @@ import Footer from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { JSON_LD, METADATA } from "@/constants/Metadata";
 import type { Metadata } from "next";
-import { Nunito_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const nunito = Nunito_Sans({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = METADATA;
 
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={nunito.className}>
+			<body className={inter.className}>
 				<Providers>
 					<Navbar />
 					<main className="no-scrollbar m-0 overflow-x-hidden overflow-y-scroll scroll-smooth p-0">
