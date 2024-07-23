@@ -3,10 +3,31 @@
 	"organizeImports": {
 		"enabled": true
 	},
+	"files": {
+		"ignore": [
+			"node_modules/**/*",
+			".husky/**/*",
+			".next/**/*",
+			".git/**/*",
+			"bun.lockb"
+		],
+		"include": [
+			"**/*.ts",
+			"**/*.tsx",
+			"**/*.js",
+			"**/*.jsx",
+			"**/*.cjs",
+			"**/*.mjs",
+			"**/*.(*)"
+		]
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"nursery": {
+				"useSortedClasses": "error"
+			}
 		}
 	},
 	"formatter": {

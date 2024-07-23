@@ -1,10 +1,7 @@
-import { Plane } from "lucide-react";
-
 export const CONTENT = {
-	PRODUCT_TITLE: "TAKE OFF.COM",
-	PRODUCT_LOGO: Plane,
-	HERO_TITLE: "Book Your Airport Taxi Ride",
-	HERO_SUBTITLE: "Experience Comfort and Class in London",
+	PRODUCT_TITLE: "Landscaper",
+	HERO_TITLE: "Best Landscape Design & Maintenance",
+	HERO_SUBTITLE: "{Subtitle}",
 	HERO_DESCRIPTION:
-		"Enjoy the most affordable and convenient airport pickup and drop-off services in London. Travel in style and comfort with our premium rides.",
+		"We are proud to be a responsible and sustainable lawn care company, dedicated to preserving the environment and the health of your lawn",
 };

@@ -1,54 +1,15 @@
 import type { Metadata } from "next";
 
-const title: string = "Book Airport Taxi - Fast, Easy & Reliable Transfers";
-const description: string =
-	"Reliable airport taxi booking service in the UK. Book your airport transfer in just 3 easy steps and get to your destination on time.";
+const title: string = "{Title}";
+const description: string = "{Description}";
 
 // TODO: Change to original url when releasing
-export const url: string = "https://take-off.uk";
+export const url: string = "{url}";
 
 export const METADATA: Metadata = {
 	title: title,
 	description: description,
-	keywords: [
-		"take off taxi",
-		"take off cabs",
-		"discount airport taxi service",
-		"last-minute airport taxi booking",
-		"airport taxi service with child seat",
-		"pet-friendly airport taxi service",
-		"airport taxi service for business travelers",
-		"london airport taxi",
-		"Heathrow Airport (LHR) - London",
-		"Gatwick Airport (LGW) - London",
-		"Manchester Airport (MAN)",
-		"Stansted Airport (STN) - London",
-		"London Luton Airport (LTN)",
-		"Edinburgh Airport (EDI)",
-		"Birmingham Airport (BHX)",
-		"Glasgow Airport (GLA)",
-		"Bristol Airport (BRS)",
-		"Newcastle Airport (NCL)",
-		"Liverpool John Lennon Airport (LPL)",
-		"East Midlands Airport (EMA)",
-		"London City Airport (LCY)",
-		"Southampton Airport (SOU)",
-		"Aberdeen Airport (ABZ)",
-		"Belfast International Airport (BFS)",
-		"Leeds Bradford Airport (LBA)",
-		"London Southend Airport (SEN)",
-		"Cardiff Airport (CWL)",
-		"Exeter Airport (EXT)",
-		"Heathrow airport taxi",
-		"affordable Heathrow airport taxi",
-		"cheap London airport taxi",
-		"fast airport taxi service",
-		"Ealing airport taxi service",
-		"Croydon airport taxi booking",
-		"Hounslow airport taxi service",
-		"Wimbledon airport taxi booking",
-		"Stratford airport taxi service",
-	],
+	keywords: [],
 	manifest: "/manifest.webmanifest",
 	icons: [
 		{
@@ -137,7 +98,7 @@ export const METADATA: Metadata = {
 		title,
 		description,
 		type: "website",
-		siteName: "TAKEOFF.COM",
+		siteName: "{Title}",
 		url: url,
 		images: [
 			{
@@ -165,13 +126,12 @@ export const METADATA: Metadata = {
 
 export const JSON_LD = {
 	"@context": "https://schema.org",
-	"@type": "TaxiService",
-	name: "TakeOff.com",
+	"@type": "Landscaping",
+	name: "{Title}",
 	url: url,
 	logo: `${url}/opengraph-image.png`,
 	image: `${url}/opengraph-image.png`,
-	description:
-		"Book your airport taxi in London with TakeOff.com. Choose from a variety of cabs to suit your needs and budget.",
+	description: "{Description}",
 	areaServed: {
 		"@type": "Place",
 		name: "London",
@@ -181,29 +141,22 @@ export const JSON_LD = {
 			addressCountry: "GB",
 		},
 	},
-	serviceType: "Airport Taxi Service",
+	serviceType: "Landscaping Service",
 	availableService: [
 		{
 			"@type": "Service",
-			serviceType: "Standard Cab",
-			description:
-				"Affordable standard cab service for individual or small group transport.",
+			serviceType: "",
+			description: "",
 		},
 		{
 			"@type": "Service",
-			serviceType: "Luxury Cab",
-			description:
-				"Luxury cab service for those looking for comfort and style.",
-		},
-		{
-			"@type": "Service",
-			serviceType: "Minivan",
-			description: "Spacious minivans for larger groups or extra luggage.",
+			serviceType: "{}",
+			description: "",
 		},
 	],
 	offers: {
 		"@type": "Offer",
-		url: `${url}/taxis`,
+		url: `${url}`,
 		priceCurrency: "GBP",
 		price: "Varies",
 		eligibleRegion: {
@@ -213,7 +166,7 @@ export const JSON_LD = {
 		availability: "https://schema.org/InStock",
 		itemOffered: {
 			"@type": "Service",
-			serviceType: "TaxiBooking",
+			serviceType: "Landscaping",
 		},
 	},
 	contactPoint: {
@@ -224,8 +177,8 @@ export const JSON_LD = {
 		areaServed: "GB",
 	},
 	sameAs: [
-		"https://www.facebook.com/takeoffcom",
-		"https://www.twitter.com/takeoffcom",
-		"https://www.instagram.com/takeoffcom",
+		"https://www.facebook.com/",
+		"https://www.twitter.com/",
+		"https://www.instagram.com/",
 	],
 };

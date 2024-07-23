@@ -2,10 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
 	return {
-		name: "TAKE OFF.com",
-		short_name: "TAKE OFF",
-		description:
-			"Airport taxi booking service in the UK. Book airport taxis in just 3 easy steps. Get your airport taxi booked today.",
+		name: "{Title}",
+		short_name: "{Title}",
+		description: "{Description}",
 		theme_color: "#2563eb",
 		background_color: "#ffffff",
 		display: "standalone",

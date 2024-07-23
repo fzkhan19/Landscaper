@@ -3,10 +3,10 @@ import Footer from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { JSON_LD, METADATA } from "@/constants/Metadata";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = METADATA;
 
@@ -17,10 +17,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={inter.className}>
+			<body className={nunito.className}>
 				<Providers>
 					<Navbar />
-					<main className="overflow-x-hidden overflow-y-scroll scroll-smooth no-scrollbar p-0 m-0">
+					<main className="no-scrollbar m-0 overflow-x-hidden overflow-y-scroll scroll-smooth p-0">
 						<script
 							// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 							dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}

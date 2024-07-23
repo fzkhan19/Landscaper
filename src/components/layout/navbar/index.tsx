@@ -1,7 +1,7 @@
 "use client";
 import { Home, Menu } from "lucide-react";
 import Link from "next/link";
-import React, { Suspense } from "react";
+import React, { Suspense, useMemo } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -17,40 +17,18 @@ import {
 } from "../../ui/sheet";
 
 import { CONTENT } from "@/constants/content";
+import Image from "next/image";
 import {
 	NavigationMenu,
 	NavigationMenuItem,
 	NavigationMenuList,
 } from "../../ui/navigation-menu";
-import { ToggleTheme } from "../toggle-theme";
+import { ToggleTheme as ToggleThemeComponent } from "../toggle-theme";
 
 interface RouteProps {
 	href: string;
 	label: string;
 }
-
-const routeList: RouteProps[] = [
-	{
-		href: "/taxis",
-		label: "Book a Ride",
-	},
-	{
-		href: "/rides",
-		label: "Your Rides",
-	},
-	{
-		href: "/about",
-		label: "About",
-	},
-	{
-		href: "/contact",
-		label: "Contact",
-	},
-	{
-		href: "/help",
-		label: "Help",
-	},
-];
 
 const MemoizedRouteList = React.lazy(() =>
 	import("./MemoizedRouteList").then((module) => ({
@@ -58,35 +36,89 @@ const MemoizedRouteList = React.lazy(() =>
 	})),
 );
 
-const CustomNavigationMenu = React.memo(() => (
-	<NavigationMenu className="mx-auto hidden lg:block">
-		<NavigationMenuList>
-			<NavigationMenuItem>
-				<Suspense>
-					<MemoizedRouteList routeList={routeList} />
-				</Suspense>
-			</NavigationMenuItem>
-		</NavigationMenuList>
-	</NavigationMenu>
-));
+const CustomNavigationMenu = React.memo(() => {
+	const routeList: RouteProps[] = useMemo(
+		() => [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/services",
+				label: "Services",
+			},
+			{
+				href: "/portfolio",
+				label: "Portfolio",
+			},
+			{
+				href: "/contact",
+				label: "Contact",
+			},
+		],
+		[],
+	);
+
+	return (
+		<NavigationMenu className="mx-auto hidden lg:block">
+			<NavigationMenuList>
+				<NavigationMenuItem>
+					<Suspense fallback={<div>Loading...</div>}>
+						<MemoizedRouteList routeList={routeList} />
+					</Suspense>
+				</NavigationMenuItem>
+			</NavigationMenuList>
+		</NavigationMenu>
+	);
+});
+
+const MemoizedSheetContent = React.memo(SheetContent);
+const MemoizedSheetFooter = React.memo(SheetFooter);
+const ToggleTheme = React.memo(ToggleThemeComponent);
+const MemoizedImage = React.memo(Image);
 
 export const Navbar = () => {
 	const [isOpen, setIsOpen] = React.useState(false);
 
+	const routeList: RouteProps[] = useMemo(
+		() => [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/services",
+				label: "Services",
+			},
+			{
+				href: "/portfolio",
+				label: "Portfolio",
+			},
+			{
+				href: "/contact",
+				label: "Contact",
+			},
+		],
+		[],
+	);
+
 	return (
 		<header
 			className={cn(
-				"absolute top-5 z-40 left-0 right-0 mx-auto flex w-[90%] items-center justify-between",
+				"absolute top-5 right-0 left-0 z-40 mx-auto flex w-[90%] items-center justify-between",
 				"rounded-2xl border border-secondary p-4",
 				"shadow-[0_0px_10px_rgb(0,0,0,0.2)] shadow-primary/30",
-				"hover:shadow-primary/50 border-0",
+				"border-0 hover:shadow-primary/50",
 				"transition-all duration-500 ease-in-out",
 				"md:top-10 md:w-[70%] lg:w-[75%] lg:max-w-screen-xl",
-				"bg-white/20 saturate-150 backdrop-blur backdrop-contrast-125 dark:bg-black/20",
+				"bg-white/50 saturate-150 backdrop-blur backdrop-contrast-125 dark:bg-black/50",
 			)}
 		>
-			<Link className="flex items-center gap-2 px-2 font-bold text-lg" href="/">
-				<CONTENT.PRODUCT_LOGO size={24} fill="currentColor" strokeWidth={0.5} />
+			<Link
+				className="flex items-center gap-3 px-2 font-extrabold text-lime-700 text-xl"
+				href="/"
+			>
+				<MemoizedImage src="/logo.svg" width={32} height={32} alt="logo" />
 				{CONTENT.PRODUCT_TITLE}
 			</Link>
 
@@ -99,7 +131,7 @@ export const Navbar = () => {
 							onClick={() => setIsOpen(!isOpen)}
 						/>
 					</SheetTrigger>
-					<SheetContent
+					<MemoizedSheetContent
 						className="flex flex-col justify-between rounded-tr-2xl rounded-br-2xl border-secondary bg-card"
 						side="left"
 					>
@@ -110,7 +142,12 @@ export const Navbar = () => {
 										className="flex items-center gap-2 font-bold text-lg"
 										href="/"
 									>
-										<CONTENT.PRODUCT_LOGO size={24} fill="currentColor" />
+										<MemoizedImage
+											src="/logo.svg"
+											width={32}
+											height={32}
+											alt="logo"
+										/>
 										{CONTENT.PRODUCT_TITLE}
 									</Link>
 								</SheetTitle>
@@ -131,9 +168,9 @@ export const Navbar = () => {
 							</div>
 						</div>
 
-						<SheetFooter className="flex-col items-start justify-start sm:flex-col w-full">
+						<MemoizedSheetFooter className="w-full flex-col items-start justify-start sm:flex-col">
 							<Separator className="mb-2" />
-							<div className="justify-between items-center flex w-full">
+							<div className="flex w-full items-center justify-between">
 								<ToggleTheme />
 								<Link className="mx-3" href={"/"}>
 									<Button
@@ -145,8 +182,8 @@ export const Navbar = () => {
 									</Button>
 								</Link>
 							</div>
-						</SheetFooter>
-					</SheetContent>
+						</MemoizedSheetFooter>
+					</MemoizedSheetContent>
 				</Sheet>
 			</div>
 
