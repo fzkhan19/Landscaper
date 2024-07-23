@@ -1,8 +1,8 @@
-import { IconCardsFilled } from "@tabler/icons-react";
-import { FilesIcon, Flag, Flower } from "lucide-react";
+import { Calendar, FilesIcon, Flag, Flower } from "lucide-react";
 import { Button } from "../ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { CardContent, CardTitle } from "../ui/card";
 import { Label } from "../ui/label";
+const CalendarIcon = () => <Calendar className="size-5" />;
 
 export default function HowItWorks() {
 	const steps = [
@@ -73,7 +73,13 @@ export default function HowItWorks() {
 				{/* End Cards */}
 				{/* Buttons */}
 				<div className="mx-4 md:mx-0">
-					<Button className="font-semibold text-base" size={"lg"}>
+					<Button
+						className="font-semibold text-base"
+						size={"lg"}
+						variant={"expandIcon"}
+						Icon={CalendarIcon}
+						iconPlacement="right"
+					>
 						Make an appointment
 					</Button>
 				</div>

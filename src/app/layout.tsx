@@ -27,10 +27,8 @@ export default function RootLayout({
 							type="application/ld+json"
 						/>
 						{children}
-					</main>
-					<footer>
 						<Footer />
-					</footer>
+					</main>
 				</Providers>
 			</body>
 		</html>

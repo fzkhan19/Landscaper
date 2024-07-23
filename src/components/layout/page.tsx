@@ -1,4 +1,3 @@
-import CTASection from "@/components/layout/CTA";
 import HowItWorks from "@/components/layout/HowItWorks";
 import Portfolio from "@/components/layout/Portfolio";
 import WhatWeDo from "@/components/layout/WhatWeDo";
@@ -23,13 +22,13 @@ export default function Home() {
 			<HowItWorks />
 			<Portfolio />
 			<FAQSection />
-			<CTASection />
+			<HeroSection />
 			<Particles
 				refresh
 				className="-z-10 absolute inset-0"
 				ease={80}
 				staticity={120}
-				quantity={100}
+				quantity={50}
 			/>
 		</article>
 	);

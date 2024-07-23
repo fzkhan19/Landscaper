@@ -13,56 +13,44 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
 	{
-		question: "Is this template free?",
-		answer: "Yes. It is a free NextJS Shadcn template.",
+		question: "How often do you come per month?",
+		answer:
+			"We aim to come weekly for lawn and yard maintenance, especially in peak growth season. Every yard is unique, which is why we're regularly checking up and keeping notes on your yard so we can best serve you year-round. ",
 		value: "item-1",
 	},
 	{
-		question: "Duis aute irure dolor in reprehenderit in voluptate velit?",
+		question: "What is your cancellation policy?",
 		answer:
-			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam consectetur sapiente, iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+			"We understand that sometimes life happens, and we want to make sure you're always in control of your experience. If you need to cancel, please let us know as soon as possible, and we'll do our best to accommodate your needs.",
 		value: "item-2",
 	},
 	{
-		question:
-			"Lorem ipsum dolor sit amet Consectetur natus dolor minus quibusdam?",
+		question: "Lorem ipsum dolor sit amet Consectetur?",
 		answer:
 			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis.",
 		value: "item-3",
-	},
-	{
-		question: "Excepteur sint occaecat cupidata non proident sunt?",
-		answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-		value: "item-4",
-	},
-	{
-		question:
-			"Enim ad minim veniam, quis nostrud exercitation ullamco laboris?",
-		answer: "consectetur adipisicing elit. Sint labore.",
-		value: "item-5",
 	},
 ];
 
 export const FAQSection = () => {
 	return (
-		<section className="container py-24 sm:py-32 md:w-[700px]" id="faq">
+		<section className="container py-12 sm:py-32 md:w-[700px]" id="faq">
 			<div className="mb-8 text-center">
-				<h2 className="mb-2 text-center text-lg text-primary tracking-wider">
-					FAQS
+				<h2 className="text-center text-lime-600 text-xs tracking-tight md:text-sm">
+					FREQUENTLY ASKED QUESTIONS
 				</h2>
 
-				<h2 className="text-center font-bold text-3xl md:text-4xl">
-					Common Questions
-				</h2>
+				<h1 className="scroll-m-20 text-pretty font-extrabold text-4xl text-lime-600 lg:text-6xl">
+					You've got questions. we've got answers.
+				</h1>
 			</div>
 
 			<Accordion collapsible className="AccordionRoot" type="single">
 				{FAQList.map(({ question, answer, value }) => (
-					<AccordionItem key={value} value={value}>
-						<AccordionTrigger className="text-left">
+					<AccordionItem key={value} value={value} className="mb-4">
+						<AccordionTrigger className="text-left font-bold">
 							{question}
 						</AccordionTrigger>
-
 						<AccordionContent>{answer}</AccordionContent>
 					</AccordionItem>
 				))}
