@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Label } from "../ui/label";
+import TestimonialSlider from "../ui/carousel-autoplay";
 
 export default function WhatWeDo() {
 	const cards = [
@@ -39,7 +40,7 @@ export default function WhatWeDo() {
 	return (
 		<>
 			{/* Hero */}
-			<div className="relative overflow-hidden py-20 lg:py-20">
+			<div className="relative overflow-hidden pt-20 lg:py-20"> 
 				<div className="relative z-10">
 					<div className="container py-10 lg:py-16">
 						<div className="mx-auto max-w-2xl text-center">
@@ -64,7 +65,7 @@ export default function WhatWeDo() {
 					</div>
 				</div>
 				{/* Cards */}
-				<div className="flex w-full flex-wrap justify-center gap-4">
+				<div className="hidden w-full flex-wrap justify-center gap-4 md:flex">
 					{cards.map((card, index) => (
 						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 						<Card key={index}>
@@ -92,6 +93,8 @@ export default function WhatWeDo() {
 					))}
 				</div>
 				{/* End Cards */}
+
+				<TestimonialSlider testimonials={cards}/>
 			</div>
 		</>
 	);

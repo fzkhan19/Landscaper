@@ -48,6 +48,10 @@ const CustomNavigationMenu = React.memo(() => {
 				label: "Services",
 			},
 			{
+				href: "/about",
+				label: "About",
+			},
+			{
 				href: "/portfolio",
 				label: "Portfolio",
 			},
@@ -85,6 +89,10 @@ export const Navbar = () => {
 			{
 				href: "/",
 				label: "Home",
+			},
+			{
+				href: "/about",
+				label: "About",
 			},
 			{
 				href: "/services",

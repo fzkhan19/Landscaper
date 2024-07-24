@@ -29,6 +29,7 @@ export default function Portfolio() {
 								</p>
 							</div>
 							<div className="mt-5 flex flex-wrap justify-center gap-x-10 gap-y-10 lg:gap-x-20 lg:gap-y-20">
+
 								<div>
 									<Image
 										src="/project1.png"
@@ -38,13 +39,13 @@ export default function Portfolio() {
 									/>
 									<div
 										className={cn(
-											"absolute bottom-0 ml-12 max-w-[15rem]",
+											"absolute top-80 ml-12 max-w-[15rem] md:top-auto md:bottom-0",
 											"rounded-3xl rounded-br-[3.5rem] bg-lime-200 p-8 px-4",
 											"flex flex-col items-start justify-center gap-y-2",
 										)}
 									>
-										<Label className="font-light">Maintenance</Label>
-										<p className="mt-0.5 text-balance text-start font-bold text-xl">
+										<span className="font-light text-lime-800">Maintenance</span>
+										<p className="mt-0.5 text-balance text-start font-bold text-lime-900 text-xl">
 											Backyard transformation with a pool,fire pit, landscaping
 											& more
 										</p>
@@ -53,6 +54,7 @@ export default function Portfolio() {
 										</Button>
 									</div>
 								</div>
+
 								<div>
 									<Image
 										src="/project2.png"
@@ -62,13 +64,13 @@ export default function Portfolio() {
 									/>
 									<div
 										className={cn(
-											"absolute right-0 bottom-0 mr-20 max-w-[15rem]",
+											"absolute right-0 bottom-0 mr-20 max-w-[15rem] ",
 											"rounded-3xl rounded-br-[3.5rem] bg-lime-200 p-8 px-4",
 											"flex flex-col items-start justify-center gap-y-2",
 										)}
 									>
-										<Label className="font-light">Maintenance</Label>
-										<p className="mt-0.5 text-balance text-start font-bold text-xl">
+										<span className="font-light text-lime-800">Maintenance</span>
+										<p className="mt-0.5 text-balance text-start font-bold text-lime-900 text-xl">
 											Backyard transformation with a pool,fire pit, landscaping
 											& more
 										</p>

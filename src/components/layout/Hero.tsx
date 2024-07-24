@@ -9,7 +9,7 @@ export default function HeroSection() {
 	return (
 		<>
 			{/* Hero */}
-			<div className="relative overflow-hidden py-20 lg:py-20">
+			<div className="relative overflow-hidden pt-20 lg:py-20">
 				{/* Gradients */}
 				<div
 					aria-hidden="true"

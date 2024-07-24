@@ -23,9 +23,9 @@ const services = [
 
 export default function Footer() {
 	return (
-		<footer className="relative mt-8 flex w-full flex-col items-start justify-center gap-16">
-			<div className="relative mt-8 flex w-full items-start justify-center gap-16">
-				<div className="mr-28 flex flex-col gap-2">
+		<footer className="relative mt-8 flex w-full flex-col items-start justify-center gap-16 border-primary border-t">
+			<div className="mt-8 ml-8 flex w-full flex-col items-start justify-center gap-16 md:ml-0 md:flex-row">
+				<div className="flex flex-col gap-2 md:mr-28">
 					<h2 className="font-extrabold text-xl">LANDSCAPERS</h2>
 					<p className="w-56 text-sm">
 						Best Landscape Design & Maintenance services in the Columbus OH
@@ -76,7 +76,7 @@ export default function Footer() {
 				</div>
 			</div>
 
-			<div className="mt-8 flex w-full items-center justify-around px-16">
+			<div className="flex w-full items-center justify-around p-6 md:px-16">
 				<h2 className="text-sm">
 					Copyright © 2024 Landscapers services All rights reserved.
 				</h2>
@@ -93,7 +93,7 @@ export default function Footer() {
 			{/* Gradients */}
 			<div
 				aria-hidden="true"
-				className="-translate-x-1/2 -bottom-8 -z-10 absolute start-1/2 flex transform"
+				className="-translate-x-1/2 -bottom-8 -z-10 absolute start-1/2 hidden transform md:flex"
 			>
 				<div className="-translate-x-[10rem] h-[12rem] w-[25rem] rotate-[-60deg] transform bg-gradient-to-r from-primary/50 to-primary/20 blur-3xl" />
 				<div className="-rotate-12 h-[24rem] w-[50rem] origin-top-left translate-x-[35rem] rounded-full bg-gradient-to-tl from-primary/50 to-primary/10 blur-3xl" />

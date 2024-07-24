@@ -28,7 +28,7 @@ export default function HowItWorks() {
 	return (
 		<>
 			{/* Hero */}
-			<div className="relative flex flex-col items-center justify-center overflow-hidden py-20 lg:py-20">
+			<div className="relative flex flex-col items-center justify-center overflow-hidden pt-10 lg:py-10">
 				<div className="relative z-10">
 					<div className="container py-10 lg:py-8">
 						<div className="mx-auto max-w-2xl text-center">
@@ -51,8 +51,9 @@ export default function HowItWorks() {
 						</div>
 					</div>
 				</div>
+
 				{/* Cards */}
-				<div className="flex w-full flex-wrap justify-center gap-4">
+				<div className="flex w-full flex-wrap justify-center md:gap-4">
 					{steps.map((card, index) => (
 						<div
 							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
@@ -72,7 +73,7 @@ export default function HowItWorks() {
 				</div>
 				{/* End Cards */}
 				{/* Buttons */}
-				<div className="mx-4 md:mx-0">
+				<div className="mx-4 mt-8 md:mx-0 md:mt-12">
 					<Button
 						className="font-semibold text-base"
 						size={"lg"}
