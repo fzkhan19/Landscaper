@@ -26,7 +26,9 @@ export default function Footer() {
 		<footer className="relative mt-8 flex w-full flex-col items-start justify-center gap-16 border-primary border-t">
 			<div className="mt-8 ml-8 flex w-full flex-col items-start justify-center gap-16 md:ml-0 md:flex-row">
 				<div className="flex flex-col gap-2 md:mr-28">
-					<h2 className="font-extrabold text-xl">LANDSCAPERS</h2>
+					<h2 className="font-extrabold text-3xl text-lime-800 dark:text-lime-200">
+						LANDSCAPERS
+					</h2>
 					<p className="w-56 text-sm">
 						Best Landscape Design & Maintenance services in the Columbus OH
 					</p>

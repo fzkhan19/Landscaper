@@ -1,7 +1,7 @@
 {
 	"biome.enabled": true,
 	"editor.formatOnSave": true,
-	"files.autoSaveDelay": 800,
+	"files.autoSaveDelay": 1400,
 	"files.autoSave": "afterDelay",
 	"editor.defaultFormatter": "biomejs.biome",
 	"tailwindCSS.includeLanguages": {
@@ -19,4 +19,12 @@
 		"source.fixAll.ts": "always",
 		"source.removeUnused.ts": "always"
 	},
+	"emeraldwalk.runonsave": {
+		"commands": [
+			{
+				"match": "\\.(js|ts|jsx|tsx)$",
+				"cmd": "bunx @biomejs/biome lint ${file} --write --unsafe"
+			}
+		]
+	}
 }
