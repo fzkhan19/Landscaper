@@ -2,7 +2,7 @@ import CTASection from "@/components/layout/CTA";
 import { FAQSection } from "./Faq";
 import WhatWeDo from "./WhatWeDo";
 
-export default function AboutPage() {
+export default function Page() {
 	return (
 		<div className="relative overflow-hidden lg:py-20">
 			{/* Gradients */}

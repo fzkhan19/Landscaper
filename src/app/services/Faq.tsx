@@ -34,7 +34,7 @@ const FAQList: FAQProps[] = [
 
 export const FAQSection = () => {
 	return (
-		<section className="container py-12 sm:py-32 md:w-[700px]" id="faq">
+		<section className="container py-24 md:w-[700px] md:py-32" id="faq">
 			<div className="mb-8 text-center">
 				<h2 className="text-center text-lime-600 text-xs tracking-tight">
 					FREQUENTLY ASKED QUESTIONS
@@ -51,7 +51,9 @@ export const FAQSection = () => {
 						<AccordionTrigger className="text-left font-bold text-lime-900">
 							{question}
 						</AccordionTrigger>
-						<AccordionContent className="text-lime-800">{answer}</AccordionContent>
+						<AccordionContent className="text-lime-800">
+							{answer}
+						</AccordionContent>
 					</AccordionItem>
 				))}
 			</Accordion>
