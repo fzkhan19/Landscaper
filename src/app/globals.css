@@ -16,6 +16,16 @@ body {
   flex-direction: column;
   overflow: hidden;
 }
+
+.leaflet-container {
+  height: 50vh;
+  width: 60vw;
+}
+
+.leaflet-control-attribution{
+  display: none;
+}
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {

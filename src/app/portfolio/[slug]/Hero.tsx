@@ -22,7 +22,7 @@ export default function Hero({ title }: { title: string }) {
 						{/* Title */}
 						<div className="mt-5 max-w-5xl">
 							<h1 className="text scroll-m-20 text-balance font-extrabold text-3xl text-lime-600 lg:text-6xl">
-								Ready to transform your outdoor experience?
+							A Small Cottage Garden
 							</h1>
 						</div>
 						{/* End Title */}
