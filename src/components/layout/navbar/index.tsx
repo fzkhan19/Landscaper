@@ -18,13 +18,12 @@ import {
 
 import { CONTENT } from "@/constants/content";
 import { IconLeaf } from "@tabler/icons-react";
-import Image from "next/image";
+import { ToggleTheme as ToggleThemeComponent } from "../toggle-theme";
 import {
 	NavigationMenu,
-	NavigationMenuItem,
 	NavigationMenuList,
-} from "../../ui/navigation-menu";
-import { ToggleTheme as ToggleThemeComponent } from "../toggle-theme";
+	NavigationMenuItem,
+} from "@/components/ui/navigation-menu";
 
 interface RouteProps {
 	href: string;
@@ -80,7 +79,6 @@ const CustomNavigationMenu = React.memo(() => {
 const MemoizedSheetContent = React.memo(SheetContent);
 const MemoizedSheetFooter = React.memo(SheetFooter);
 const ToggleTheme = React.memo(ToggleThemeComponent);
-const MemoizedImage = React.memo(Image);
 
 export const Navbar = () => {
 	const [isOpen, setIsOpen] = React.useState(false);
@@ -149,15 +147,10 @@ export const Navbar = () => {
 							<SheetHeader className="mb-4 ml-4">
 								<SheetTitle className="flex items-center">
 									<Link
-										className="flex items-center gap-2 font-bold text-lg"
+										className="flex items-center gap-2 font-bold text-lg text-lime-700 dark:text-lime-200"
 										href="/"
 									>
-										<MemoizedImage
-											src="/logo.svg"
-											width={32}
-											height={32}
-											alt="logo"
-										/>
+										<IconLeaf />
 										{CONTENT.PRODUCT_TITLE}
 									</Link>
 								</SheetTitle>
