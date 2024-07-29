@@ -90,7 +90,7 @@ export default function ContactForm() {
 					onSubmit={sendEmail}
 					ref={formRef}
 				>
-					<div className="grid grid-cols-2 gap-4">
+					<div className="grid gap-4 md:grid-cols-2">
 						<FormField
 							control={form.control}
 							name="name"
@@ -122,7 +122,7 @@ export default function ContactForm() {
 							)}
 						/>
 					</div>
-					<div className="grid grid-cols-2 gap-4">
+					<div className="grid gap-4 md:grid-cols-2">
 						<FormField
 							control={form.control}
 							name="phone_number"
@@ -174,7 +174,6 @@ export default function ContactForm() {
 										maxHeight={500}
 										{...field}
 									/>
-									{/* <Input placeholder="Enter your message" {...field} /> */}
 								</FormControl>
 								<FormMessage className="ml-2 place-self-start" />
 							</FormItem>
