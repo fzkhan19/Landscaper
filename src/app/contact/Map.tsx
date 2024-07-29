@@ -21,26 +21,22 @@ const OpenStreetMap = () => {
 
 	return (
 		<>
-			<div className="row">
-				<div className="col">
-					<div className="container">
-						<MapContainer
-							center={center}
-							zoom={ZOOM_LEVEL}
-							ref={mapRef}
-							dragging={false}
-							scrollWheelZoom={false}
-							className="rounded-3xl"
-						>
-							<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-							<Marker position={center} icon={icon}>
-								<Popup>
-									<span>742 Evergreen Terrace, Springfield</span>
-								</Popup>
-							</Marker>
-						</MapContainer>
-					</div>
-				</div>
+			<div className="h-full w-full px-0 md:px-48">
+				<MapContainer
+					center={center}
+					zoom={ZOOM_LEVEL}
+					ref={mapRef}
+					dragging={false}
+					scrollWheelZoom={false}
+					className="h-full w-full rounded-3xl"
+				>
+					<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+					<Marker position={center} icon={icon}>
+						<Popup>
+							<span>742 Evergreen Terrace, Springfield</span>
+						</Popup>
+					</Marker>
+				</MapContainer>
 			</div>
 		</>
 	);

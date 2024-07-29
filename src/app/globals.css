@@ -18,8 +18,7 @@ body {
 }
 
 .leaflet-container {
-  height: 50vh;
-  width: 60vw;
+  min-height: 50vh;
 }
 
 .leaflet-control-attribution{
