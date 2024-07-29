@@ -26,5 +26,8 @@
 				"cmd": "bunx @biomejs/biome lint ${file} --write --unsafe"
 			}
 		]
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	}
 }

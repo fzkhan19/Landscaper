@@ -10,29 +10,59 @@ import {
 	FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 export default function ContactForm() {
 	const formSchema = z.object({
 		name: z.string().min(2).max(50),
 		email: z.string().email(),
 		phone_number: z.string().min(10).max(15),
-		address: z.string().min(2).max(50),
+		address: z.string().min(2),
 		notes: z.string().min(2).max(50),
 	});
 
-	// 1. Define your form.
+	const formRef = useRef<HTMLFormElement>(null);
+	const [isLoading, setIsLoading] = useState(false);
+
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 	});
 
-	// 2. Define a submit handler.
-	function onSubmit(values: z.infer<typeof formSchema>) {
-		// Do something with the form values.
-		// ✅ This will be type-safe and validated.
-		console.log(values);
-	}
+	const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		setIsLoading(true);
+		if (
+			process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID &&
+			process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID &&
+			process.env.NEXT_PUBLIC_EMAILJS_USER_ID &&
+			formRef.current
+		) {
+			emailjs
+				.sendForm(
+					process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+					process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+					formRef.current,
+					process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
+				)
+				.then(
+					() => {
+						toast.success("Message sent successfully");
+					},
+					() => {
+						toast.error("Message failed to send");
+					},
+				)
+				.finally(() => {
+					setIsLoading(false);
+					form.reset();
+				});
+		}
+		form.reset();
+	};
 
 	return (
 		<div className="mx-auto flex max-w-5xl flex-col items-center justify-center py-10 text-center">
@@ -56,8 +86,9 @@ export default function ContactForm() {
 
 			<Form {...form}>
 				<form
-					onSubmit={form.handleSubmit(onSubmit)}
 					className="flex w-full max-w-4xl flex-col space-y-8 py-20"
+					onSubmit={sendEmail}
+					ref={formRef}
 				>
 					<div className="grid grid-cols-2 gap-4">
 						<FormField
@@ -71,7 +102,7 @@ export default function ContactForm() {
 									<FormControl>
 										<Input placeholder="Enter your name" {...field} />
 									</FormControl>
-									<FormMessage />
+									<FormMessage className="ml-2 place-self-start" />
 								</FormItem>
 							)}
 						/>
@@ -86,7 +117,7 @@ export default function ContactForm() {
 									<FormControl>
 										<Input placeholder="Enter your email" {...field} />
 									</FormControl>
-									<FormMessage />
+									<FormMessage className="ml-2 place-self-start" />
 								</FormItem>
 							)}
 						/>
@@ -101,9 +132,13 @@ export default function ContactForm() {
 										Phone Number
 									</FormLabel>
 									<FormControl>
-										<Input placeholder="Enter your phone number" {...field} />
+										<Input
+											placeholder="Enter your phone number"
+											type="tel"
+											{...field}
+										/>
 									</FormControl>
-									<FormMessage />
+									<FormMessage className="ml-2 place-self-start" />
 								</FormItem>
 							)}
 						/>
@@ -118,7 +153,7 @@ export default function ContactForm() {
 									<FormControl>
 										<Input placeholder="Enter your address" {...field} />
 									</FormControl>
-									<FormMessage />
+									<FormMessage className="ml-2 place-self-start" />
 								</FormItem>
 							)}
 						/>
@@ -141,11 +176,15 @@ export default function ContactForm() {
 									/>
 									{/* <Input placeholder="Enter your message" {...field} /> */}
 								</FormControl>
-								<FormMessage />
+								<FormMessage className="ml-2 place-self-start" />
 							</FormItem>
 						)}
 					/>
-					<Button className="w-48 text-primary-foreground" type="submit">
+					<Button
+						className="w-48 text-primary-foreground"
+						disabled={isLoading || form.formState.isSubmitting}
+						type="submit"
+					>
 						Send Message
 					</Button>
 				</form>
