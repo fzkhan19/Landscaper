@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 
-const title: string = "{Title}";
-const description: string = "{Description}";
+const title: string = "Best Landscape Design & Maintenance - Landscaper";
+const description: string =
+	"We are proud to be a responsible and sustainable lawn care company, dedicated to preserving the environment and the health of your lawn";
 
 // TODO: Change to original url when releasing
-export const url: string = "{url}";
+export const url: string = "https://landscaper-lime.vercel.app";
 
 export const METADATA: Metadata = {
 	title: title,
