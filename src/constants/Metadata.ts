@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const title: string = "Best Landscape Design & Maintenance - Landscaper";
+const title: string = "Landscaper | Best Landscape Design & Maintenance";
 const description: string =
 	"We are proud to be a responsible and sustainable lawn care company, dedicated to preserving the environment and the health of your lawn";
 
